@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import './App.css';
-
+import NavBar from './components/Nav';
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -12,8 +12,10 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      
       <Router>
         <div className="App">
+          <NavBar></NavBar>
             <header className="App-header">
              <img src={logo} className="App-logo" alt="logo" />
                <p>
