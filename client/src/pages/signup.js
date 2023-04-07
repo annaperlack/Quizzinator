@@ -7,7 +7,6 @@ import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    username: '',
     email: '',
     password: '',
   });
@@ -32,6 +31,7 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
+      console.log(data)
     } catch (e) {
       console.error(e);
     }
@@ -50,14 +50,6 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -89,6 +81,7 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
+             <Link to="/login">Already have an account? Login.</Link>
           </div>
         </div>
       </div>
