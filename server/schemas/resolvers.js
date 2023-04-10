@@ -7,7 +7,7 @@ const resolvers = {
   Query: {
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate('quizes');
+        const user = await User.findById(context.user._id).populate('quizzes');
 
         return user;
       }
@@ -43,7 +43,7 @@ const resolvers = {
       const quiz = await Quiz.create({score});
       const user = await User.findByIdAndUpdate(
         context.user._id,
-        { $addToSet:{quizes: quiz._id}},
+        { $addToSet:{quizzes: quiz._id}},
         { new: true }
       )
       return user;
