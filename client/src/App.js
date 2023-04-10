@@ -11,7 +11,6 @@ import Auth from './utils/auth';
 
 import Home from './pages/home';
 import NavBar from './components/Nav';
-// import Signup from './pages/Signup';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Study from './pages/study';
@@ -51,12 +50,8 @@ function App() {
           <div className="container">
             <Routes>
               <Route 
-                path="/"
-                element={<Home />}
-              />
-              <Route 
-                path="/login" 
-                element={<Login />}
+                exact path="/"
+                element={isLoggedIn ? <Home /> : <Login />}
               />
               <Route 
                 path="/signup" 
@@ -68,7 +63,6 @@ function App() {
               />
             </Routes>
           </div>
-          {/* <Footer /> */}
         </div>
       </Router>
     </ApolloProvider>
