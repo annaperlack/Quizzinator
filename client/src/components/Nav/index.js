@@ -6,6 +6,7 @@ function Header({ currentPage, handlePageChange, user }) {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    window.location.href = '/'
   };
   return (
     <header className="header">
@@ -36,7 +37,7 @@ function Header({ currentPage, handlePageChange, user }) {
             <Link
               href="#contact"
               className={`nav-link ${currentPage === "Contact" && "active"}`}
-              to = '/contact'
+              to ='/contact'
             >
               Questions?
             </Link>
@@ -60,3 +61,4 @@ function Header({ currentPage, handlePageChange, user }) {
 }
 
 export default Header;
+
