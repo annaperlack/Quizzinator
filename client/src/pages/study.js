@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { fetchQuestions } from "../../../server/controller/api";
 import { getRandom } from "../utils/api";
 
 export default function Study() {
@@ -24,11 +23,11 @@ export default function Study() {
     return array;
   };
 
+  const [selectedChoices, setSelectedChoices] = useState({});
+
   const handleButtonClick = async () => {
     try {
       const { data } = await getRandom(5); // Change limit value as per requirement
-      //const data = response.json()
-      console.log(data);
       const questionArray = data.map((question) => ({
         id: question.id,
         question: question.question,
@@ -38,18 +37,26 @@ export default function Study() {
         ]),
         correctAnswer: question.correctAnswer,
       }));
-      console.log(questionArray);
       setQuestions(questionArray);
+      setSelectedChoices({});
     } catch (error) {
       console.error(error);
     }
   };
-  const choiceClick = (event)=>{
-    console.log(event.target)
-    if (event.target.value === 'true') {console.log('correct answers selected')}
-    else {console.log('wrong answer')}
-  }
 
+  const choiceClick = (event, questionId, choice) => {
+    const correctAnswer = questions.find((question) => question.id === questionId).correctAnswer;
+    const isCorrect = correctAnswer === choice;
+    setSelectedChoices((prevState) => ({
+      ...prevState,
+      [questionId]: {
+        choice,
+        correctAnswer,
+        isCorrect,
+      },
+    }));
+  };
+  
   return (
     <div>
       <h1>Study Page</h1>
@@ -58,18 +65,32 @@ export default function Study() {
         <ul>
           {questions.map((question) => (
             <li key={question.id}>
-                <div>
+              <div>
                 {question.question}
-                {question.choices.map(choice=>(
-               choice=== question.correctAnswer ? <button value= 'true' onClick={choiceClick} key={choice}> {choice}</button>: <button value = 'false' onClick={choiceClick}key={choice}> {choice}</button>   
-
+                {question.choices.map((choice) => (
+                  <button
+                    value={choice}
+                    onClick={(event) =>
+                      choiceClick(event, question.id, choice)
+                    }
+                    key={choice}
+                    disabled={selectedChoices[question.id]}
+                  >
+                    {choice}
+                  </button>
                 ))}
-
-                </div>
-                </li>
+                {selectedChoices[question.id] && (
+                  <p>
+                    {selectedChoices[question.id].isCorrect ? "Correct" : "Incorrect"}.{" "}
+                    {!selectedChoices[question.id].isCorrect &&
+                      `The correct answer is "${selectedChoices[question.id].correctAnswer}".`}
+                  </p>
+                )}
+              </div>
+            </li>
           ))}
         </ul>
       )}
     </div>
   );
-}
+                    }  
