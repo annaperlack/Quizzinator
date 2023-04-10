@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Header({ currentPage, handlePageChange, user }) {
   return (
@@ -9,31 +10,31 @@ function Header({ currentPage, handlePageChange, user }) {
       <nav className="navbar">
         <ul className="nav-list">
           <li>
-            <a
+            <Link
               href="#study"
               className={`nav-link ${currentPage === "Study" && "active"}`}
-              onClick={() => handlePageChange("Study")}
+              to = '/study'
             >
               Study Time
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="#connect"
               className={`nav-link ${currentPage === "Connect" && "active"}`}
-              onClick={() => handlePageChange("Connect")}
+              to = '/connect'
             >
               Connect
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="#contact"
               className={`nav-link ${currentPage === "Contact" && "active"}`}
-              onClick={() => handlePageChange("Contact")}
+              to = '/contact'
             >
               Questions?
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

@@ -4,8 +4,12 @@ const typeDefs = gql`
   type User {
     _id: ID
     email: String
+    quizes: [Quiz]
   }
-
+  type Quiz {
+    score: String
+    createdAt: String
+  }
 
   type Auth {
     token: ID
@@ -19,6 +23,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addQuiz(score: String!): User
   }
 `;
 
