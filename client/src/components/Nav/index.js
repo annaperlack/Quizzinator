@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 function Header({ currentPage, handlePageChange, user }) {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
     <header className="header">
       <div className="header-logo">
@@ -34,6 +39,9 @@ function Header({ currentPage, handlePageChange, user }) {
               to = '/contact'
             >
               Questions?
+            </Link>
+            <Link className="btn btn-lg btn-info m-2" onClick={logout}>
+                Logout
             </Link>
           </li>
         </ul>
