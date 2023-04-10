@@ -81,7 +81,7 @@ const Signup = () => {
                 {error.message}
               </div>
             )}
-             <Link to="/login">Already have an account? Login.</Link>
+             <Link to="/">Already have an account? Login.</Link>
           </div>
         </div>
       </div>
