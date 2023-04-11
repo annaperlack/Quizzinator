@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
+import Button from '@mui/material/Button';
+
 
 function Header({ currentPage, handlePageChange, user }) {
   const logout = (event) => {
@@ -19,7 +21,7 @@ function Header({ currentPage, handlePageChange, user }) {
             <Link
               href="#study"
               className={`nav-link ${currentPage === "Study" && "active"}`}
-              to = '/study'
+              to='/study'
             >
               Study Time
             </Link>
@@ -28,7 +30,7 @@ function Header({ currentPage, handlePageChange, user }) {
             <Link
               href="#connect"
               className={`nav-link ${currentPage === "Connect" && "active"}`}
-              to = '/connect'
+              to='/connect'
             >
               Connect
             </Link>
@@ -37,13 +39,13 @@ function Header({ currentPage, handlePageChange, user }) {
             <Link
               href="#contact"
               className={`nav-link ${currentPage === "Contact" && "active"}`}
-              to ='/contact'
+              to='/contact'
             >
               Questions?
             </Link>
-            <Link className="btn btn-lg btn-info m-2" onClick={logout}>
-                Logout
-            </Link>
+            <Button variant="contained" onClick={logout}>
+              Logout
+            </Button>
           </li>
         </ul>
       </nav>
