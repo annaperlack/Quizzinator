@@ -43,17 +43,9 @@ const Login = (props) => {
         <main className="flex-row justify-center mb-4">
             <div className="col-12 col-lg-10">
                 <div className="card">
-                    <h4 className="card-header bg-dark text-light p-2">Login</h4>
                     <div className="card-body">
-                        {data ? (
-                            <p>
-                                Success! You may now head{' '}
-                                <Link to="/">back to the homepage.</Link>
-                            </p>
-                        ) : (
-
                             <form autoComplete="off" onSubmit={handleFormSubmit}>
-                                <h2>Login Form</h2>
+                                <h2>Login</h2>
                                 <TextField
                                     label="Email"
                                     name='email'
@@ -63,8 +55,8 @@ const Login = (props) => {
                                     variant="outlined"
                                     color="secondary"
                                     type="email"
-                                    sx={{ mb: 3 }}
                                     fullWidth
+                                    sx={{ mb: 3 }}
                                 />
                                 <TextField
                                     label="Password"
@@ -80,7 +72,6 @@ const Login = (props) => {
                                 />
                                 <Button variant="outlined" color="secondary" type="submit">Login</Button>
                             </form>
-                        )}
                         {error && (
                             <div className="my-3 p-3 bg-danger text-white">
                                 {error.message}
