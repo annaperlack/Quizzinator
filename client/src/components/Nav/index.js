@@ -16,38 +16,33 @@ function Header({ currentPage, handlePageChange, user }) {
         {/* app logo here */}
       </div>
       <nav className="navbar">
-        <ul className="nav-list">
-          <li>
-            <Link
-              href="#study"
-              className={`nav-link ${currentPage === "Study" && "active"}`}
-              to='/study'
-            >
-              Study Time
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#connect"
-              className={`nav-link ${currentPage === "Connect" && "active"}`}
-              to='/connect'
-            >
-              Connect
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#contact"
-              className={`nav-link ${currentPage === "Contact" && "active"}`}
-              to='/contact'
-            >
-              Questions?
-            </Link>
-            <Button variant="contained" onClick={logout}>
-              Logout
-            </Button>
-          </li>
-        </ul>
+        <Button
+          variant="contained"
+          href="/study"
+          className={`nav-link ${currentPage === "Study" && "active"}`}
+          to='/study'
+        >
+          Study Time
+        </Button>
+        <Button
+          variant="contained"
+          href="/connect"
+          className={`nav-link ${currentPage === "Connect" && "active"}`}
+          to='/connect'
+        >
+          Connect
+        </Button>
+        <Button
+          variant="contained"
+          href="/contact"
+          className={`nav-link ${currentPage === "Contact" && "active"}`}
+          to='/contact'
+        >
+          Questions?
+        </Button>
+        <Button variant="contained" onClick={logout}>
+          Logout
+        </Button>
       </nav>
       <div className="header-user">
         {/* code for profile picture v */}
