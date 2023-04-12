@@ -18,3 +18,15 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+
+export const QUERY_QUIZ = gql`
+  query quizzes {
+    quizzes {
+      _id
+      score
+      createdAt
+      user_email
+    }
+  }
+`;

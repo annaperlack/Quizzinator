@@ -15,6 +15,7 @@ import Login from './pages/login';
 import Signup from './pages/signup';
 import Study from './pages/study';
 import Profile from './pages/profile';
+import Leaderboard from './pages/leaderboard';
 
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
@@ -67,6 +68,10 @@ function App() {
               <Route
                 path="/study"
                 element={<Study />}
+              />
+              <Route
+                path="/leaderboard"
+                element={<Leaderboard />}
               />
                 <Route
                 path="/profile"

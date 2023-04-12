@@ -14,6 +14,11 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    quizzes: async (parent, args) => {
+      const quizData = await Quiz.find({}).sort({score: 1}).limit(10)
+      console.log(quizData)
+      return quizData
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -40,7 +45,7 @@ const resolvers = {
       return { token, user };
     },
     addQuiz: async (parent, {score}, context) => {
-      const quiz = await Quiz.create({score});
+      const quiz = await Quiz.create({score, user_email: context.user.email});
       const user = await User.findByIdAndUpdate(
         context.user._id,
         { $addToSet:{quizzes: quiz._id}},
