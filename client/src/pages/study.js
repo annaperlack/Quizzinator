@@ -86,6 +86,14 @@ export default function Study() {
           <MenuItem value={'science'}>Science</MenuItem>
           <MenuItem value={'history'}>History</MenuItem>
           <MenuItem value={'geography'}>Geography</MenuItem>
+          <MenuItem value={'music'}>Music</MenuItem>
+          <MenuItem value={'arts_and_literature'}>Arts & Literature</MenuItem>
+          <MenuItem value={'film_an_tv'}>Film & TV</MenuItem>
+          <MenuItem value={'food_and_drink'}>Food & Drink</MenuItem>
+          <MenuItem value={'general_knowledge'}>General Knowledge</MenuItem>
+          <MenuItem value={'society_and_culture'}>Society & Culture</MenuItem>
+          <MenuItem value={'sport_and_leisure'}>Sport & Leisure</MenuItem>
+
         </Select>
         <Button variant="contained" onClick={handleButtonClick} disabled={!category}>Fetch Questions</Button>
       </FormControl>
@@ -121,7 +129,8 @@ export default function Study() {
           ))}
         </ol>
       )}
-      <label><b>Total Correct: {correct}/{answered}</b></label>
+      <label><b>Total Correct: 
+        {correct}/{answered}</b></label>
     </div>
   );
                     }  
