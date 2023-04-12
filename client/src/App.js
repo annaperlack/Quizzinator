@@ -53,7 +53,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Container maxWidth="sm">
+        <Container maxWidth="xl">
           {isLoggedIn && <NavBar />}
           <div className="container">
             <Routes>
@@ -73,7 +73,7 @@ function App() {
                 path="/leaderboard"
                 element={<Leaderboard />}
               />
-                <Route
+              <Route
                 path="/profile"
                 element={<Profile />}
               />
