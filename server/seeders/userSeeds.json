@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Chris Purnell",
+        "email": "chris@gmail.com",
+        "password": "password01",
+        "quizzes": ""
+    },
+    {
+        "name": "Daniel Prussia",
+        "email": "Daniel@gmail.com",
+        "password": "password02",
+        "quizzes": ""
+    },
+    {
+        "name": "Anna Parleck",
+        "email": "Anna@gmail.com",
+        "password": "password03",
+        "quizzes": ""
+    },
+    {
+        "name": "Vinny Lopez",
+        "email": "Vinny@gmail.com",
+        "password": "password04",
+        "quizzes": ""
+    },
+    {
+        "name": "Fred Joss",
+        "email": "Fred@gmail.com",
+        "password": "password04",
+        "quizzes": ""
+    }
+]
