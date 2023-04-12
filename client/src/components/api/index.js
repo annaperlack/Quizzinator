@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchQuestions } from '../../../../server/controller/api';
 
 function MyComponent() {
-  const categories = ["science", "history"]
+  const categories = ["science", "history", "geography", "music", "arts & literature", "film & tv", "food & drink", "general knowledge", "society & culture", "sport & leisure" ]
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
