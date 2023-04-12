@@ -7,9 +7,6 @@ const Leaderboard = () => {
     const { loading, data } = useQuery(QUERY_QUIZ);
     const leaderData = data?.quizzes || [];
     console.log(leaderData)
-    // //useEffect(() => {
-    //     setLeaders (leaderData)
-    // }, [leaderData])
     return (
         <>
         <ul>
