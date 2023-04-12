@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Project3
+            The Quizinator
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -96,7 +96,7 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} component={Link} to={page}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -119,7 +119,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Project3
+            The Quizinator
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
