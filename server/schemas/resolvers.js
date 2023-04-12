@@ -1,26 +1,26 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Quiz, Category, Question } = require('../models');
+const { User, Thought } = require('../models');
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+
 
 const resolvers = {
   Query: {
-    user: async (parent, args, context) => {
-      if (context.user) {
-        const user = await User.findById(context.user._id).populate('quizzes');
-
-        return user;
-      }
-
-      throw new AuthenticationError('Not logged in');
+    users: async () => {
+      return User.find().populate('thoughts');
     },
-  },
-  Mutation: {
-    addUser: async (parent, args) => {
-      const user = await User.create(args);
-      const token = signToken(user);
+    user: async ({ username }) => {
+        const user = await User.findOne({ username }).populate('thoughts');
+    },
 
+    
+  },
+
+  Mutation: {
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
+      const token = signToken(user);
       return { token, user };
+
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -39,15 +39,57 @@ const resolvers = {
 
       return { token, user };
     },
-    addQuiz: async (parent, {score}, context) => {
-      const quiz = await Quiz.create({score});
-      const user = await User.findByIdAndUpdate(
-        context.user._id,
-        { $addToSet:{quizzes: quiz._id}},
-        { new: true }
-      )
-      return user;
-    }
+
+    addThought: async (parent, { thoughtText }, context) => {
+      if (context.user) {
+        const thought = await Thought.create({
+          thoughtText,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { thoughts: thought._id } }
+        );
+
+        return thought;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    // addComment: async (parent, { thoughtId, commentText }, context) => {
+    //   if (context.user) {
+    //     return Thought.findOneAndUpdate(
+    //       { _id: thoughtId },
+    //       {
+    //         $addToSet: {
+    //           comments: { commentText, commentAuthor: context.user.username },
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+    removeThought: async (parent, { thoughtId }, context) => {
+      if (context.user) {
+        const thought = await Thought.findOneAndDelete({
+          _id: thoughtId,
+          thoughtAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { thoughts: thought._id } }
+        );
+
+        return thought;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    
   }
 };
 

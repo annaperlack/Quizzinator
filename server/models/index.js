@@ -1,6 +1,4 @@
 const User = require('./User');
-const Question = require('./Question');
-const Category = require('./Category');
-const Quiz = require('./Quiz');
+const Thought = require('./Thought');
 
-module.exports = { User, Question, Category, Quiz };
+module.exports = { User, Thought };
