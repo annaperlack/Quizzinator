@@ -7,8 +7,10 @@ const typeDefs = gql`
     quizzes: [Quiz]
   }
   type Quiz {
+    _id: ID
     score: String
     createdAt: String
+    user_email: String
   }
 
   type Auth {
@@ -18,6 +20,7 @@ const typeDefs = gql`
 
   type Query {
     user: User
+    quizzes: [Quiz]
   }
 
   type Mutation {

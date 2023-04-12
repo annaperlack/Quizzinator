@@ -9,6 +9,11 @@ const quizSchema = new Schema({
 
     },
 
+    user_email: {
+        type: String,
+        required: true,
+        unique: false
+    },
     createdAt: {
         type: Date,
         default: Date.now,
