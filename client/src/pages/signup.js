@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 
 const Signup = () => {
     const [formState, setFormState] = useState({
+        name: '',
         email: '',
         password: '',
     });
@@ -45,6 +46,18 @@ const Signup = () => {
                     <div className="card-body">
                         <form autoComplete="off" onSubmit={handleFormSubmit}>
                             <h2>Signup</h2>
+                            <TextField
+                                label="Name"
+                                name='name'
+                                value={formState.name}
+                                onChange={handleChange}
+                                required
+                                variant="outlined"
+                                color="secondary"
+                                type="name"
+                                fullWidth
+                                sx={{ mb: 3 }}
+                            />
                             <TextField
                                 label="Email"
                                 name='email'
