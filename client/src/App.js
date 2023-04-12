@@ -14,6 +14,7 @@ import NavBar from './components/Nav';
 import Login from './pages/login';
 import Signup from './pages/signup';
 import Study from './pages/study';
+import Profile from './pages/profile';
 
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
@@ -66,6 +67,10 @@ function App() {
               <Route
                 path="/study"
                 element={<Study />}
+              />
+                <Route
+                path="/profile"
+                element={<Profile />}
               />
             </Routes>
           </div>
