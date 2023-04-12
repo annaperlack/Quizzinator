@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Auth from '../../utils/auth';
 import { Link } from 'react-router-dom';
 
-const pages = ['Study', 'Connect', 'Contact'];
+const pages = ['Study', 'Leaderboard', 'Contact'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
