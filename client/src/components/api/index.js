@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import { fetchQuestions } from '../../../../server/controller/api';
 
 function MyComponent() {
+  const categories = ["science", "history"]
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
-    fetchQuestions(5).then(data => {
+    fetchQuestions(5, categories).then(data => {
       setQuestions(data);
     });
   }, []);
