@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { FormControl, MenuItem, InputLabel, Select, Button, List, ListItem, ListItemText } from '@mui/material';
+
 import { getRandom } from "../utils/api";
 
 export default function Study() {
+  const [category, setCategory] = useState(null);
+  const [answered, setAnswered] = useState(0);
+  const [correct, setCorrect] = useState(0);
   const [questions, setQuestions] = useState([]);
   const shuffle = (array) => {
     let currentIndex = array.length,
@@ -27,7 +32,7 @@ export default function Study() {
 
   const handleButtonClick = async () => {
     try {
-      const { data } = await getRandom(5); // Change limit value as per requirement
+      const { data } = await getRandom(10, category); // Change limit value as per requirement
       const questionArray = data.map((question) => ({
         id: question.id,
         question: question.question,
@@ -47,6 +52,12 @@ export default function Study() {
   const choiceClick = (event, questionId, choice) => {
     const correctAnswer = questions.find((question) => question.id === questionId).correctAnswer;
     const isCorrect = correctAnswer === choice;
+    
+    setAnswered(answered + 1)
+    if(isCorrect) {
+      setCorrect(correct + 1)
+    }
+    
     setSelectedChoices((prevState) => ({
       ...prevState,
       [questionId]: {
@@ -56,28 +67,47 @@ export default function Study() {
       },
     }));
   };
+
+  const handleCategorySelect = (event) => {
+    setCategory(event.target.value)
+  };
   
   return (
     <div>
       <h1>Study Page</h1>
-      <button onClick={handleButtonClick}>Fetch Questions</button>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Category</InputLabel>
+        <Select
+          id="category-select"
+          label="Category"
+          onChange={handleCategorySelect}
+          sx={{ mb: 2 }}
+        >
+          <MenuItem value={'science'}>Science</MenuItem>
+          <MenuItem value={'history'}>History</MenuItem>
+          <MenuItem value={'geography'}>Geography</MenuItem>
+        </Select>
+        <Button variant="contained" onClick={handleButtonClick} disabled={!category}>Fetch Questions</Button>
+      </FormControl>
       {questions.length > 0 && (
-        <ul>
+        <ol>
           {questions.map((question) => (
             <li key={question.id}>
               <div>
                 {question.question}
                 {question.choices.map((choice) => (
-                  <button
-                    value={choice}
-                    onClick={(event) =>
-                      choiceClick(event, question.id, choice)
-                    }
-                    key={choice}
-                    disabled={selectedChoices[question.id]}
-                  >
-                    {choice}
-                  </button>
+                  <List>
+                    <ListItem>
+                      <button
+                        value={choice}
+                        onClick={(event) =>
+                          choiceClick(event, question.id, choice)
+                        }
+                        key={choice}
+                        disabled={selectedChoices[question.id]}
+                      >{choice}</button>
+                    </ListItem>
+                  </List>
                 ))}
                 {selectedChoices[question.id] && (
                   <p>
@@ -89,8 +119,9 @@ export default function Study() {
               </div>
             </li>
           ))}
-        </ul>
+        </ol>
       )}
+      <label><b>Total Correct: {correct}/{answered}</b></label>
     </div>
   );
                     }  

@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Auth from '../../utils/auth';
+import { Link } from 'react-router-dom';
 
 const pages = ['Study', 'Connect', 'Contact'];
 
@@ -128,6 +129,9 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem component={Link} to="/profile">
+                <Typography textAlign="center">Profile</Typography>
+              </MenuItem>
 
               <MenuItem key="Logout" onClick={logout}>
                 <Typography textAlign="center">Logout</Typography>
