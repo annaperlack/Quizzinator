@@ -5,6 +5,7 @@
   - [Installation](#installation)
   - [Contribution](#contribution)
   - [License](#license)
+  - [Usage](#usage)
 
   ## Description
  Welcome to the Quizzinator, an innovative application designed to enhance your knowledge and broaden your horizons! Our comprehensive study section boasts a vast array of fascinating trivia questions covering an extensive range of subjects, including music, sports, science, history, and more.
@@ -45,6 +46,15 @@ Anna Perlack - Github.com/annaperlack
 Vinnie Lopez - Github.com/vlopez99
 Fred Joss - Github.com/FDjoss
 Chris Purnell - Github.com/Ctpurnell
+
+## Usage
+Indulge yourself in an exhilarating journey of knowledge acquisition! Begin by gracefully registering on our opulent front page, and relish the experience of feeling at home on our platform. Upon entering your noble credentials, you shall have the privilege of entering our hallowed halls of education.
+
+Feast your eyes on the majestic study page, and partake in the grandeur of our educational repertoire by pressing the illustrious 'Fetch Questions' button. Allow the sheer magnificence of our platform to captivate your senses as you delve deep into the realms of education.
+
+Display your mettle by answering each query with poise and panache, and earn your rightful place amongst the learned. For those who falter, fear not, for we shall gently guide you towards the correct path of enlightenment, ensuring your journey remains unhindered.
+
+At the end of your journey, your aptitude and knowledge shall be rewarded with a grand score, a testament to your unwavering commitment to excellence. So, let us embark on this grand odyssey together, and bask in the glory of education, only on our illustrious platform.
 
 
 
