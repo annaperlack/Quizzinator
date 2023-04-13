@@ -53,31 +53,34 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+
+        <Container maxWidth='xl' disableGutters={true}>
           {isLoggedIn && <NavBar />}
-          <div className="container">
-            <Routes>
-              <Route
-                exact path="/"
-                element={isLoggedIn ? <Home /> : <Login />}
-              />
-              <Route
-                path="/signup"
-                element={<Signup />}
-              />
-              <Route
-                path="/study"
-                element={<Study />}
-              />
-              <Route
-                path="/leaderboard"
-                element={<Leaderboard />}
-              />
-              <Route
-                path="/profile"
-                element={<Profile />}
-              />
-            </Routes>
-          </div>
+        </Container>
+        <div className="container">
+          <Routes>
+            <Route
+              exact path="/"
+              element={isLoggedIn ? <Home /> : <Login />}
+            />
+            <Route
+              path="/signup"
+              element={<Signup />}
+            />
+            <Route
+              path="/study"
+              element={<Study />}
+            />
+            <Route
+              path="/leaderboard"
+              element={<Leaderboard />}
+            />
+            <Route
+              path="/profile"
+              element={<Profile />}
+            />
+          </Routes>
+        </div>
       </Router>
     </ApolloProvider>
   );

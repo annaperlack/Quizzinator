@@ -14,8 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Auth from '../../utils/auth';
 import { deepOrange } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
+import Grid from '@mui/material/Unstable_Grid2';
 
-const pages = ['Study', 'Leaderboard', 'Contact'];
+const pages = ['Study', 'Leaderboard'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -47,8 +48,8 @@ function ResponsiveAppBar() {
   const profile = Auth.getProfile()
 
   return (
-    <AppBar position="static">
-      <Container>
+    <AppBar position="fixed">
+      <Grid>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -170,7 +171,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
         </Toolbar>
-      </Container>
+      </Grid>
     </AppBar>
   );
 }
