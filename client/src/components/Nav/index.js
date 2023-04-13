@@ -48,7 +48,7 @@ function ResponsiveAppBar() {
   const profile = Auth.getProfile()
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="relative">
       <Grid>
         <Toolbar disableGutters>
           <Typography
