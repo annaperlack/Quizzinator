@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 const { User } = require('../models');
-const userSeeds =require('./userSeeds.json');
+const userSeeds = require('./userSeeds.json');
 
 db.once('open', async () => {
     try {
@@ -8,8 +8,10 @@ db.once('open', async () => {
         await User.create(userSeeds);
 
         console.log('Done and seeded');
-        process.exit(0);
     } catch (err) {
-        throw err;
+        console.error(err);
+        process.exit(1);
     }
+    
+    process.exit(0);
 });
