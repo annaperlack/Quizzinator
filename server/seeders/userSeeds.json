@@ -2,31 +2,31 @@
     {
         "name": "Chris Purnell",
         "email": "chris@gmail.com",
-        "password": "password01",
-        "quizzes": ""
+        "password": "password01"
+
     },
     {
         "name": "Daniel Prussia",
         "email": "Daniel@gmail.com",
-        "password": "password02",
-        "quizzes": ""
+        "password": "password01"
+
     },
     {
         "name": "Anna Parleck",
         "email": "Anna@gmail.com",
-        "password": "password03",
-        "quizzes": ""
+        "password": "password01"
+        
     },
     {
         "name": "Vinny Lopez",
         "email": "Vinny@gmail.com",
-        "password": "password04",
-        "quizzes": ""
+        "password": "password01"
+
     },
     {
         "name": "Fred Joss",
         "email": "Fred@gmail.com",
-        "password": "password04",
-        "quizzes": ""
+        "password": "password01"
+        
     }
 ]

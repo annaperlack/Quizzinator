@@ -29,14 +29,15 @@ const userSchema = new Schema({
   ]
 },
 
-{
-    toJSON: {
-        virtuals: true,
-        getters: true
-      },
-      id: false,
+// {
+//     toJSON: {
+//         virtuals: true,
+//         getters: true
+//       },
+//       id: false,
   
-})
+// }
+)
 
 
 // set up pre-save middleware to create password
@@ -50,8 +51,8 @@ userSchema.pre('save', async function(next) {
 });
 
 // compare the incoming password with the hashed password
-userSchema.methods.isCorrectPassword = async function(password) {
-  return await bcrypt.compare(password, this.password);
+userSchema.methods.isCorrectPassword = function (password) {
+  return bcrypt.compare(password, this.password);
 };
 
 const User = mongoose.model('User', userSchema);
