@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { FormControl, MenuItem, InputLabel, Select, Button, List, ListItem, ListItemText } from '@mui/material';
-
+import { useMutation } from '@apollo/client';
 import { getRandom } from "../utils/api";
+import { ADD_QUIZ } from '../utils/mutations';
+import { useNavigate } from "react-router-dom";
+
 
 export default function Study() {
   const [category, setCategory] = useState(null);
   const [answered, setAnswered] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [questions, setQuestions] = useState([]);
+  const [saveQuiz, {error}] = useMutation (ADD_QUIZ);
+  const navigate = useNavigate();
+
   const shuffle = (array) => {
     let currentIndex = array.length,
       randomIndex;
@@ -71,6 +77,20 @@ export default function Study() {
   const handleCategorySelect = (event) => {
     setCategory(event.target.value)
   };
+
+  const handleScoreSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      const {data} = await saveQuiz({
+        variables: {score: correct}
+      })
+      console.log('QUIZ')
+      console.log(data.addQuiz)
+      navigate("/leaderboard")
+    } catch (error) {
+      console.error(error)
+    }
+  }
   
   return (
     <div>
@@ -131,6 +151,10 @@ export default function Study() {
       )}
       <label><b>Total Correct: 
         {correct}/{answered}</b></label>
+      <Button onClick={(event) =>
+                          handleScoreSubmit(event)
+                        }
+        >Submit Score to Leaderboard</Button>
     </div>
   );
                     }  

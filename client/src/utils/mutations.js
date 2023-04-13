@@ -32,3 +32,17 @@ export const UPDATE_USER = gql`
   }
 `;
 
+export const ADD_QUIZ = gql`
+  mutation addQuiz($score: Int!) {
+    addQuiz(score: $score) {
+      name 
+      quizzes {
+        _id
+        score
+        createdAt
+        user_email
+      }
+    }
+  }
+`;
+
