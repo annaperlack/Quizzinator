@@ -44,6 +44,8 @@ function ResponsiveAppBar() {
     window.location.href = '/'
   };
 
+  const profile = Auth.getProfile()
+
   return (
     <AppBar position="static">
       <Container>
@@ -138,7 +140,7 @@ function ResponsiveAppBar() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar
                   sx={{ bgcolor: deepOrange[500] }}
-                  alt="Remy Sharp" />
+                  alt="Remy Sharp">{profile.data.name.charAt(0)}</Avatar>
               </IconButton>
             </Tooltip>
             <Menu
