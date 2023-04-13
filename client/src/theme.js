@@ -5,13 +5,13 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#556cd6',
+            main: '#fec20e',
         },
         secondary: {
-            main: '#19857b',
+            main: '#0e4afe',
         },
         error: {
-            main: red.A400,
+            main: '#fe4a0e',
         },
     },
 });

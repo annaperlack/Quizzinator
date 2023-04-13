@@ -66,7 +66,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            The Quizinator
+            Quizinator
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -122,7 +122,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            The Quizinator
+            Quizinator
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -139,9 +139,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar
-                  sx={{ bgcolor: deepOrange[500] }}
-                  alt="Remy Sharp">{profile.data.name.charAt(0)}</Avatar>
+                <Avatar>{profile.data.name.charAt(0)}</Avatar>
               </IconButton>
             </Tooltip>
             <Menu
@@ -160,9 +158,6 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <MenuItem component={Link} to="/profile">
-                <Typography textAlign="center">Profile</Typography>
-              </MenuItem>
 
               <MenuItem key="Logout" onClick={logout}>
                 <Typography textAlign="center">Logout</Typography>
