@@ -28,6 +28,14 @@ const resolvers = {
 
       return { token, user };
     },
+    updateUser: async (parent, {avatar_color}, context) => {
+      console.log('CONTEXT', context)
+      const user = await User.findByIdAndUpdate(
+        context.user._id, {avatar_color}, {new:true}
+      )
+      return { user };
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
