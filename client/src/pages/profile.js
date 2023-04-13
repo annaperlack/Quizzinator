@@ -5,12 +5,13 @@ import Auth from '../utils/auth';
 
 
     const Profile = (props) => {
-        Auth.getProfile()
         const profile = Auth.getProfile()
         
     return (
     <h1>Welcome, {profile.data.name}
-    <Avatar>S</Avatar>
+    <Avatar>
+    {profile.data.name.charAt(0)}
+    </Avatar>
     </h1>
     )
 }
