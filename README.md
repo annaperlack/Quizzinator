@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# The Quizzinator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ## Table of Contents
+  - [Project description](#description)
+  - [Installation](#installation)
+  - [Contribution](#contribution)
+  - [License](#license)
 
-## Available Scripts
+  ## Description
+ Welcome to the Quizzinator, an innovative application designed to enhance your knowledge and broaden your horizons! Our comprehensive study section boasts a vast array of fascinating trivia questions covering an extensive range of subjects, including music, sports, science, history, and more.
 
-In the project directory, you can run:
+Our sophisticated platform is meticulously crafted to provide you with the ultimate learning experience, allowing you to sharpen your skills and hone your knowledge with ease. Our trivia questions are carefully curated to challenge and engage you, ensuring that you remain captivated throughout your learning journey.
 
-### `npm start`
+With our cutting-edge technology and state-of-the-art features, the Quizzinator provides you with a unique opportunity to prepare and practice for future endeavors, such as appearing on the popular game show Jeopardy. Our application enables you to reinforce your knowledge, build your confidence, and achieve success in all your academic and intellectual pursuits.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+We take pride in offering a seamless and intuitive user experience, ensuring that you can focus on learning and mastering the subject matter. Our user-friendly interface, combined with our extensive database of trivia questions, ensures that you will never run out of stimulating content to keep you engaged.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Thank you for choosing the Quizzinator as your educational platform of choice. Join us today, and discover a world of knowledge and endless opportunities to enrich your mind and expand your intellectual horizons.
 
-### `npm test`
+## Installation
+  To install and run this application on your local machine, please follow the steps below:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the repository from GitHub onto your local machine using the following command in your terminal:
+`git clone https://github.com/<username>/<repository-name>.git`
 
-### `npm run build`
+Replace <username> and <repository-name> with your GitHub username and the name of the repository, respectively.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate to the root directory of the project using the command:
+`cd <repository-name>`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Replace <repository-name> with the name of the repository.
+Install the required dependencies by running the following command:
+`npm i`
+This will install all the required dependencies listed in the package.json file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To start the application, run the following command:
+`npm start`
+This will start the application on your local machine, and you can access it in your web browser by navigating to http://localhost:3000/.
 
-### `npm run eject`
+Congratulations, you have successfully installed and run the application on your local machine!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contribution
+Daniel Prussia - Github.com/danielprussia
+Anna Perlack - Github.com/annaperlack
+Vinnie Lopez - Github.com/vlopez99
+Fred Joss - Github.com/FDjoss
+Chris Purnell - Github.com/Ctpurnell
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  ## License
+  [![License: mit](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
