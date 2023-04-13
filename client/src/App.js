@@ -53,7 +53,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Container maxWidth="xl">
           {isLoggedIn && <NavBar />}
           <div className="container">
             <Routes>
@@ -79,7 +78,6 @@ function App() {
               />
             </Routes>
           </div>
-        </Container>
       </Router>
     </ApolloProvider>
   );
