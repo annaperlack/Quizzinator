@@ -29,7 +29,6 @@ const resolvers = {
       return { token, user };
     },
     updateUser: async (parent, {avatar_color}, context) => {
-      console.log('CONTEXT', context)
       const user = await User.findByIdAndUpdate(
         context.user._id, {avatar_color}, {new:true}
       )
@@ -54,7 +53,7 @@ const resolvers = {
       return { token, user };
     },
     addQuiz: async (parent, {score}, context) => {
-      const quiz = await Quiz.create({score, user_email: context.user.email});
+      const quiz = await Quiz.create({score:score, user_email: context.user.email});
       const user = await User.findByIdAndUpdate(
         context.user._id,
         { $addToSet:{quizzes: quiz._id}},

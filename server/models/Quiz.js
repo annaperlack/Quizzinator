@@ -4,9 +4,8 @@ const {
 const dateFormat = require('../utils/dateFormat');
 const quizSchema = new Schema({
     score: {
-        type: String,
+        type: Number,
         required: true,
-
     },
 
     user_email: {
