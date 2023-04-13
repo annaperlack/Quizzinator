@@ -6,6 +6,7 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
+    avatar_color: String
     quizzes: [Quiz]
   }
   type Quiz {
@@ -29,6 +30,7 @@ const typeDefs = gql`
     addUser(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addQuiz(score: String!): User
+    updateUser(avatar_color: String): User
   }
 `;
 

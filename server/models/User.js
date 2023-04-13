@@ -24,19 +24,12 @@ const userSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
         ref: 'Quiz',
-
     }
-  ]
+  ],
+  avatar_color: {
+    type: String,
+  }
 },
-
-// {
-//     toJSON: {
-//         virtuals: true,
-//         getters: true
-//       },
-//       id: false,
-  
-// }
 )
 
 
