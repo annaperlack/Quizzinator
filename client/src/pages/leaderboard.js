@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_QUIZ } from '../utils/queries.js';
+import { Container } from '@mui/material';
 
 
 
@@ -11,16 +12,16 @@ const Leaderboard = () => {
     console.log(leaderData)
 
     return (
-        <>
-        <ul>
-            {leaderData.map(leader => (
-                <li key ={leader._id}>
-                    {leader.score}
-                    {leader.email}
-                </li>
-            ))}
-        </ul>
-        </>
+        <Container>
+            <ul>
+                {leaderData.map(leader => (
+                    <li key={leader._id}>
+                        {leader.score}
+                        {leader.email}
+                    </li>
+                ))}
+            </ul>
+        </Container>
     )
 }
 export default Leaderboard
