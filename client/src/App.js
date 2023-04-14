@@ -82,8 +82,8 @@ function App() {
             />
           </Routes>
         </Grid>
+      </Router>
     </ApolloProvider>
-    </Router >
   );
 }
 
