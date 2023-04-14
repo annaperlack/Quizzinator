@@ -16,6 +16,7 @@ import Signup from './pages/signup';
 import Study from './pages/study';
 import Profile from './pages/profile';
 import Leaderboard from './pages/leaderboard';
+import Grid from '@mui/material/Unstable_Grid2';
 
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';

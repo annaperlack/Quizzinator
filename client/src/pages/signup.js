@@ -5,6 +5,7 @@ import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Unstable_Grid2';
 
 const Signup = () => {
     const [formState, setFormState] = useState({
