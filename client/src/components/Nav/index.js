@@ -49,7 +49,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="relative">
-      <Grid>
+      <Grid p={1}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
