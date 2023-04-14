@@ -6,6 +6,8 @@ import Auth from '../utils/auth';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Unstable_Grid2';
+import Typography from '@mui/material/Typography';
+
 
 const Signup = () => {
     const [formState, setFormState] = useState({
@@ -41,10 +43,10 @@ const Signup = () => {
     };
 
     return (
-        <main className="flex-row justify-center mb-4">
-            <div className="col-12 col-lg-10">
-                <div className="card">
-                    <div className="card-body">
+        <Grid>
+            <Grid>
+                <Grid>
+                    <Grid>
                         <form autoComplete="off" onSubmit={handleFormSubmit}>
                             <h2>Signup</h2>
                             <TextField
@@ -92,11 +94,11 @@ const Signup = () => {
                                 {error.message}
                             </div>
                         )}
-                        {<small>Already have an account? <Link to="/">Login here</Link></small>}
-                    </div>
-                </div>
-            </div>
-        </main>
+                        {<Typography align='center'>Already have an account? <Link to="/">Login here</Link></Typography>}
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
     );
 };
 
