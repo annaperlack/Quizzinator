@@ -5,7 +5,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import App from './App';
 import theme from './theme';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from 'react-router-dom'
+
 
 
 
@@ -13,7 +13,7 @@ const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
-  <HashRouter>
+  
 
 
   <ThemeProvider theme={theme}>
@@ -21,7 +21,7 @@ root.render(
     <CssBaseline />
     <App />
   </ThemeProvider>,
-</HashRouter>
+
 );
 
 reportWebVitals();
