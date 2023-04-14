@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 import { getRandom } from "../utils/api";
 import { ADD_QUIZ } from '../utils/mutations';
 import { useNavigate } from "react-router-dom";
+import Grid from '@mui/material/Unstable_Grid2';
 
 
 export default function Study() {
@@ -11,7 +12,7 @@ export default function Study() {
   const [answered, setAnswered] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [questions, setQuestions] = useState([]);
-  const [saveQuiz, {error}] = useMutation (ADD_QUIZ);
+  const [saveQuiz, { error }] = useMutation(ADD_QUIZ);
   const navigate = useNavigate();
 
   const shuffle = (array) => {
@@ -58,12 +59,12 @@ export default function Study() {
   const choiceClick = (event, questionId, choice) => {
     const correctAnswer = questions.find((question) => question.id === questionId).correctAnswer;
     const isCorrect = correctAnswer === choice;
-    
+
     setAnswered(answered + 1)
-    if(isCorrect) {
+    if (isCorrect) {
       setCorrect(correct + 1)
     }
-    
+
     setSelectedChoices((prevState) => ({
       ...prevState,
       [questionId]: {
@@ -81,8 +82,8 @@ export default function Study() {
   const handleScoreSubmit = async (event) => {
     event.preventDefault()
     try {
-      const {data} = await saveQuiz({
-        variables: {score: correct, total: answered}
+      const { data } = await saveQuiz({
+        variables: { score: correct, total: answered }
       })
       console.log('correct', correct)
       console.log('total', answered)
@@ -93,7 +94,7 @@ export default function Study() {
       console.error(error)
     }
   }
-  
+
   return (
     <div>
       <h1>Study Page</h1>
@@ -151,12 +152,12 @@ export default function Study() {
           ))}
         </ol>
       )}
-      <label><b>Total Correct: 
+      <label><b>Total Correct:
         {correct}/{answered}</b></label>
       <Button onClick={(event) =>
-                          handleScoreSubmit(event)
-                        }
-        >Submit Score to Leaderboard</Button>
+        handleScoreSubmit(event)
+      }
+      >Submit Score to Leaderboard</Button>
     </div>
   );
-                    }  
+}  
