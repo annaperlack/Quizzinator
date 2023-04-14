@@ -49,7 +49,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="relative">
-      <Grid>
+      <Grid p={1}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -66,7 +66,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Quizinator
+            Quizzinator
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -122,7 +122,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Quizinator
+            Quizzinator
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (

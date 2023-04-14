@@ -16,6 +16,7 @@ import Signup from './pages/signup';
 import Study from './pages/study';
 import Profile from './pages/profile';
 import Leaderboard from './pages/leaderboard';
+import Grid from '@mui/material/Unstable_Grid2';
 
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
@@ -54,10 +55,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
 
-        <Container maxWidth='xl' disableGutters={true}>
+        <Grid maxWidth='xl' disableGutters={true}>
           {isLoggedIn && <NavBar />}
-        </Container>
-        <div className="container">
+        </Grid>
+        <Grid p={2}>
           <Routes>
             <Route
               exact path="/"
@@ -80,7 +81,7 @@ function App() {
               element={<Profile />}
             />
           </Routes>
-        </div>
+        </Grid>
       </Router>
     </ApolloProvider>
   );

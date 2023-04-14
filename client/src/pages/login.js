@@ -5,6 +5,7 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Unstable_Grid2';
 
 const Login = (props) => {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -42,34 +43,34 @@ const Login = (props) => {
             <div className="col-12 col-lg-10">
                 <div className="card">
                     <div className="card-body">
-                            <form autoComplete="off" onSubmit={handleFormSubmit}>
-                                <h2>Login</h2>
-                                <TextField
-                                    label="Email"
-                                    name='email'
-                                    value={formState.email}
-                                    onChange={handleChange}
-                                    required
-                                    variant="outlined"
-                                    color="secondary"
-                                    type="email"
-                                    fullWidth
-                                    sx={{ mb: 3 }}
-                                />
-                                <TextField
-                                    label="Password"
-                                    name='password'
-                                    value={formState.password}
-                                    onChange={handleChange}
-                                    required
-                                    variant="outlined"
-                                    color="secondary"
-                                    type="password"
-                                    fullWidth
-                                    sx={{ mb: 3 }}
-                                />
-                                <Button variant="outlined" color="secondary" type="submit">Login</Button>
-                            </form>
+                        <form autoComplete="off" onSubmit={handleFormSubmit}>
+                            <h2>Login</h2>
+                            <TextField
+                                label="Email"
+                                name='email'
+                                value={formState.email}
+                                onChange={handleChange}
+                                required
+                                variant="outlined"
+                                color="secondary"
+                                type="email"
+                                fullWidth
+                                sx={{ mb: 3 }}
+                            />
+                            <TextField
+                                label="Password"
+                                name='password'
+                                value={formState.password}
+                                onChange={handleChange}
+                                required
+                                variant="outlined"
+                                color="secondary"
+                                type="password"
+                                fullWidth
+                                sx={{ mb: 3 }}
+                            />
+                            <Button variant="outlined" color="secondary" type="submit">Login</Button>
+                        </form>
                         {error && (
                             <div className="my-3 p-3 bg-danger text-white">
                                 {error.message}
