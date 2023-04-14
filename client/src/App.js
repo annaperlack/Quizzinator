@@ -65,19 +65,19 @@ function App() {
               element={isLoggedIn ? <Home /> : <Login />}
             />
             <Route
-              path="/signup"
+              path="/#/signup"
               element={<Signup />}
             />
             <Route
-              path="/study"
+              path="/#/study"
               element={<Study />}
             />
             <Route
-              path="/leaderboard"
+              path="/#/leaderboard"
               element={<Leaderboard />}
             />
             <Route
-              path="/profile"
+              path="/#/profile"
               element={<Profile />}
             />
           </Routes>
