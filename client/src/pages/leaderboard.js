@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_QUIZ } from '../utils/queries.js';
-import { Container } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
 
 
 
@@ -12,16 +15,28 @@ const Leaderboard = () => {
     console.log(leaderData)
 
     return (
-        <Container>
-            <ul>
+        <Grid>
+            <List>
                 {leaderData.map(leader => (
-                    <li key={leader._id}>
-                        <label>Average: {Math.trunc(leader.score / leader.total * 100)}%</label>
-                        <label>Name: {leader.user_name}</label>
-                    </li>
+                    <ListItem>
+                        <ListItemText
+                            key={leader._id}
+                            primary={
+                                <Typography variant='body1'>
+                                    Name: {leader.user_name}
+                                </Typography>
+                            }
+                            secondary={
+                                <Typography variant='body2'>
+                                    Average: {Math.trunc(leader.score / leader.total * 100)}%
+                                </Typography>
+                            }
+                        >
+                        </ListItemText>
+                    </ListItem>
                 ))}
-            </ul>
-        </Container>
+            </List>
+        </Grid>
     )
 }
 export default Leaderboard

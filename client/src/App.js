@@ -55,10 +55,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
 
-        <Container maxWidth='xl' disableGutters={true}>
+        <Grid maxWidth='xl' disableGutters={true}>
           {isLoggedIn && <NavBar />}
-        </Container>
-        <div className="container">
+        </Grid>
+        <Grid p={2}>
           <Routes>
             <Route
               exact path="/"
@@ -81,7 +81,7 @@ function App() {
               element={<Profile />}
             />
           </Routes>
-        </div>
+        </Grid>
       </Router>
     </ApolloProvider>
   );

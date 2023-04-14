@@ -96,7 +96,7 @@ export default function Study() {
   }
 
   return (
-    <div>
+    <Grid>
       <h1>Study Page</h1>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
@@ -158,6 +158,6 @@ export default function Study() {
         handleScoreSubmit(event)
       }
       >Submit Score to Leaderboard</Button>
-    </div>
+    </Grid>
   );
 }  

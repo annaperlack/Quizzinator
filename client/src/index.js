@@ -5,7 +5,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import App from './App';
 import theme from './theme';
 import reportWebVitals from './reportWebVitals';
-import Grid from '@mui/material/Unstable_Grid2';
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
