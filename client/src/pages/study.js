@@ -82,10 +82,12 @@ export default function Study() {
     event.preventDefault()
     try {
       const {data} = await saveQuiz({
-        variables: {score: correct}
+        variables: {score: correct, total: answered}
       })
+      console.log('correct', correct)
+      console.log('total', answered)
       console.log('QUIZ')
-      console.log(data.addQuiz)
+      console.log('DATA', data)
       navigate("/leaderboard")
     } catch (error) {
       console.error(error)

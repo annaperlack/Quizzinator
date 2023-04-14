@@ -25,8 +25,9 @@ export const QUERY_QUIZ = gql`
     quizzes {
       _id
       score
+      total
       createdAt
-      user_email
+      user_name
     }
   }
 `;

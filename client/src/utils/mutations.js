@@ -33,14 +33,15 @@ export const UPDATE_USER = gql`
 `;
 
 export const ADD_QUIZ = gql`
-  mutation addQuiz($score: Int!) {
-    addQuiz(score: $score) {
+  mutation addQuiz($score: Int!, $total: Int!) {
+    addQuiz(score: $score, total:$total) {
       name 
       quizzes {
         _id
         score
+        total
         createdAt
-        user_email
+        user_name
       }
     }
   }

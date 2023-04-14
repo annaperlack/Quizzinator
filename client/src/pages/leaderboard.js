@@ -16,8 +16,8 @@ const Leaderboard = () => {
             <ul>
                 {leaderData.map(leader => (
                     <li key={leader._id}>
-                        {leader.score}
-                        {leader.email}
+                    <label>Average: {leader.score / leader.total * 100 }%</label>      
+                    <label>Name: {leader.user_name}</label>    
                     </li>
                 ))}
             </ul>

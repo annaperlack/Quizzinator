@@ -12,8 +12,9 @@ const typeDefs = gql`
   type Quiz {
     _id: ID
     score: Int
+    total: Int
     createdAt: String
-    user_email: String
+    user_name: String
   }
 
   type Auth {
@@ -29,7 +30,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addQuiz(score: Int!): User
+    addQuiz(score: Int!, total: Int!): User
     updateUser(avatar_color: String): User
   }
 `;
