@@ -7,15 +7,14 @@ import theme from './theme';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom'
 
-<HashRouter>
-  <App/>
-</HashRouter>
+
 
 const rootElement = document.getElementById('root');
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <HashRouter>
+
 
   <ThemeProvider theme={theme}>
     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
