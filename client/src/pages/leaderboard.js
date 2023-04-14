@@ -6,7 +6,6 @@ import { Container } from '@mui/material';
 
 
 const Leaderboard = () => {
-    const [leaders, setLeaders] = useState([])
     const { loading, data } = useQuery(QUERY_QUIZ);
     const leaderData = data?.quizzes || [];
     console.log(leaderData)
@@ -16,7 +15,7 @@ const Leaderboard = () => {
             <ul>
                 {leaderData.map(leader => (
                     <li key={leader._id}>
-                    <label>Average: {leader.score / leader.total * 100 }%</label>      
+                    <label>Average: {Math.trunc(leader.score / leader.total* 100) }%</label>      
                     <label>Name: {leader.user_name}</label>    
                     </li>
                 ))}
