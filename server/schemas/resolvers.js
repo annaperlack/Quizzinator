@@ -15,7 +15,17 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
     quizzes: async (parent, args) => {
-      const quizData = await Quiz.find({}).sort({score: 1}).limit(10)
+      const quizData = await Quiz.aggregate([
+        {
+          $addFields: {
+            average: {
+              $divide: [{ $add: ["$score", "$total"] }, 2]
+            }
+          }
+        },
+        {
+          $sort: { average: -1 }
+        }]).limit(20)
       console.log(quizData)
       return quizData
     }
@@ -52,8 +62,8 @@ const resolvers = {
 
       return { token, user };
     },
-    addQuiz: async (parent, {score}, context) => {
-      const quiz = await Quiz.create({score:score, user_email: context.user.email});
+    addQuiz: async (parent, {score, total}, context) => {
+      const quiz = await Quiz.create({score:score, total:total, user_name: context.user.name});
       const user = await User.findByIdAndUpdate(
         context.user._id,
         { $addToSet:{quizzes: quiz._id}},
