@@ -58,7 +58,7 @@ function App() {
         <Grid maxWidth='xl' disableGutters={true}>
           {isLoggedIn && <NavBar />}
         </Grid>
-        <Grid p={2}>
+        <Grid p={1}>
           <Routes>
             <Route
               exact path="/"

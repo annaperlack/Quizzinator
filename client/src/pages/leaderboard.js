@@ -16,9 +16,9 @@ const Leaderboard = () => {
 
     return (
         <Grid>
-            <List>
+            <List sx={{ listStyleType: 'decimal', }}>
                 {leaderData.map(leader => (
-                    <ListItem>
+                    <ListItem divider='true'>
                         <ListItemText
                             key={leader._id}
                             primary={
@@ -27,10 +27,13 @@ const Leaderboard = () => {
                                 </Typography>
                             }
                             secondary={
-                                <Typography variant='body2'>
+                                <Typography variant='caption'>
                                     Average: {Math.trunc(leader.score / leader.total * 100)}%
                                 </Typography>
                             }
+                            sx={{
+                                display: 'list-item',
+                            }}
                         >
                         </ListItemText>
                     </ListItem>
