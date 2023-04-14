@@ -8,7 +8,12 @@ const quizSchema = new Schema({
         required: true,
     },
 
-    user_email: {
+    total: {
+        type: Number,
+        required: true,
+    },
+
+    user_name: {
         type: String,
         required: true,
         unique: false
