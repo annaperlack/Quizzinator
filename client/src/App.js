@@ -18,11 +18,6 @@ import Profile from './pages/profile';
 import Leaderboard from './pages/leaderboard';
 import Grid from '@mui/material/Unstable_Grid2';
 
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -54,33 +49,34 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-
-        <Grid maxWidth='xl' disableGutters={true}>
-          {isLoggedIn && <NavBar />}
-        </Grid>
-        <Grid p={1}>
-          <Routes>
-            <Route
-              exact path="/"
-              element={isLoggedIn ? <Home /> : <Login />}
-            />
-            <Route
-              path="/signup"
-              element={<Signup />}
-            />
-            <Route
-              path="/study"
-              element={<Study />}
-            />
-            <Route
-              path="/leaderboard"
-              element={<Leaderboard />}
-            />
-            <Route
-              path="/profile"
-              element={<Profile />}
-            />
-          </Routes>
+        <Grid container direction='column' display='flex' disableGutters='true'>
+          <Grid item>
+            {isLoggedIn && <NavBar />}
+          </Grid>
+          <Grid item p={1}>
+            <Routes>
+              <Route
+                exact path="/"
+                element={isLoggedIn ? <Home /> : <Login />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
+              <Route
+                path="/study"
+                element={<Study />}
+              />
+              <Route
+                path="/leaderboard"
+                element={<Leaderboard />}
+              />
+              <Route
+                path="/profile"
+                element={<Profile />}
+              />
+            </Routes>
+          </Grid>
         </Grid>
       </Router>
     </ApolloProvider>
