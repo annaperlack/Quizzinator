@@ -49,11 +49,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Grid container direction='column' display='flex' disableGutters='true'>
+        <Grid container direction='column' disableGutters='true'>
           <Grid item>
             {isLoggedIn && <NavBar />}
           </Grid>
-          <Grid item p={1}>
+          <Grid item p={1} sx={{ overflow: 'auto', }}>
             <Routes>
               <Route
                 exact path="/"
