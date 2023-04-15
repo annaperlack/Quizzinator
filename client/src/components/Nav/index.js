@@ -6,15 +6,14 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Auth from '../../utils/auth';
-import { deepOrange } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Unstable_Grid2';
+import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 
 const pages = ['Study', 'Leaderboard'];
 
@@ -48,20 +47,20 @@ function ResponsiveAppBar() {
   const profile = Auth.getProfile()
 
   return (
-    <AppBar position="relative">
-      <Grid p={1}>
+    <AppBar position="flex">
+      <Grid p={1} >
         <Toolbar disableGutters>
+          <HelpOutlineRoundedIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} inheritViewBox />
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="a"
             href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontFamily: 'Tillana',
+              weight: '700',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -106,8 +105,9 @@ function ResponsiveAppBar() {
             </Menu>
 
           </Box>
+          <HelpOutlineRoundedIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
-            variant="h5"
+            variant="h4"
             noWrap
             component="a"
             href=""
@@ -115,9 +115,8 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontFamily: 'Tillana',
+              weight: '700',
               color: 'inherit',
               textDecoration: 'none',
             }}
