@@ -89,7 +89,7 @@ export default function Study() {
       console.log('total', answered)
       console.log('QUIZ')
       console.log('DATA', data)
-      navigate("/leaderboard")
+      navigate("/Leaderboard")
     } catch (error) {
       console.error(error)
     }
@@ -97,6 +97,7 @@ export default function Study() {
 
   return (
     <Grid>
+      
       <h1>Study Page</h1>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>

@@ -46,26 +46,7 @@ const Signup = () => {
 
     return (
         <Grid>
-            <Grid display='flex'>
-
-                <Typography
-                    variant="h4"
-                    noWrap
-                    component="a"
-                    align='center'
-                    sx={{
-                        mr: 2,
-                        flexGrow: 1,
-                        fontFamily: 'Tillana',
-                        weight: '700',
-                        color: 'inherit',
-                        textDecoration: 'none',
-                    }}
-                >
-                    <HelpOutlineRoundedIcon sx={{ mr: 1 }} />
-                    Quizzinator
-                </Typography>
-            </Grid>
+           
             <Grid>
                 <form autoComplete="off" onSubmit={handleFormSubmit}>
                     <h2>Signup</h2>

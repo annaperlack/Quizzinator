@@ -53,6 +53,15 @@ function App() {
           <Grid item>
             {isLoggedIn && <NavBar />}
           </Grid>
+          <Grid alignItems="center" justifyContent="center" container>
+        <Grid display="auto">
+          <img
+            style={{ width: "180px", height: "180px", padding: "10px" }}
+            src={require("./Logo 5.PNG")}
+            alt="picture"
+          />
+        </Grid>
+      </Grid>
           <Grid item p={1} sx={{ overflow: 'auto', }}>
             <Routes>
               <Route
@@ -60,19 +69,19 @@ function App() {
                 element={isLoggedIn ? <Home /> : <Login />}
               />
               <Route
-                path="/signup"
+                path="/Signup"
                 element={<Signup />}
               />
               <Route
-                path="/study"
+                path="/Study"
                 element={<Study />}
               />
               <Route
-                path="/leaderboard"
+                path="/Leaderboard"
                 element={<Leaderboard />}
               />
               <Route
-                path="/profile"
+                path="/Profile"
                 element={<Profile />}
               />
             </Routes>
