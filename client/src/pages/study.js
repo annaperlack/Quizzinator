@@ -89,7 +89,7 @@ export default function Study() {
       console.log('total', answered)
       console.log('QUIZ')
       console.log('DATA', data)
-      navigate("/leaderboard")
+      navigate("/Leaderboard")
     } catch (error) {
       console.error(error)
     }
