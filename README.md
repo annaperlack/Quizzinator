@@ -46,7 +46,7 @@ Congratulations, you have successfully installed and run the application on your
 ## Contribution
 Daniel Prussia - Github.com/danielprussia
 Anna Perlack - Github.com/annaperlack
-Vinnie Lopez - Github.com/vlopez99
+Vinny Lopez - Github.com/vlopez99
 Fred Joss - Github.com/FDjoss
 Chris Purnell - Github.com/Ctpurnell
 
