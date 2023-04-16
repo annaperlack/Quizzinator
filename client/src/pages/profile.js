@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { FormControl, MenuItem, InputLabel, Select, Button, List, ListItem, ListItemText, Avatar, } from '@mui/material';
+import { FormControl, MenuItem, InputLabel, Select, Avatar, } from '@mui/material';
 import { green, red, blue } from '@mui/material/colors'
 import Auth from '../utils/auth';
 import { UPDATE_USER } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
-import Grid from '@mui/material/Unstable_Grid2';
 
 
 const Profile = (props) => {
-    const [updateUser, { error, data }] = useMutation(UPDATE_USER);
+    const [updateUser] = useMutation(UPDATE_USER);
     const profile = Auth.getProfile()
     const [color, setColor] = useState(green[500]);
     const handleColorSelect = async (event) => {
@@ -28,7 +27,7 @@ const Profile = (props) => {
     return (
 
         <div>
-            
+
             <h1>Welcome, {profile.data.name}
                 <Avatar sx={{ bgcolor: color }}>
                     {profile.data.name.charAt(0)}
