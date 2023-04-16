@@ -17,7 +17,7 @@ import HelpOutlineRoundedIcon from '@mui/icons-material/HelpOutlineRounded';
 
 const pages = ['Study', 'Leaderboard'];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ currentPage }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -98,7 +98,7 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} component={Link} to={page}>
+                <MenuItem key={{ page }} component={Link} to={page}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -126,8 +126,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                href={page}
+                key={{ page }} component={Link} to={page}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
