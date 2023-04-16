@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormControl, MenuItem, InputLabel, Select, Button, List, ListItem, ListItemText } from '@mui/material';
+import { FormControl, MenuItem, InputLabel, Select, Button, List, ListItem } from '@mui/material';
 import { useMutation } from '@apollo/client';
 import { getRandom } from "../utils/api";
 import { ADD_QUIZ } from '../utils/mutations';
@@ -12,7 +12,7 @@ export default function Study() {
   const [answered, setAnswered] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [questions, setQuestions] = useState([]);
-  const [saveQuiz, { error }] = useMutation(ADD_QUIZ);
+  const [saveQuiz] = useMutation(ADD_QUIZ);
   const navigate = useNavigate();
 
   const shuffle = (array) => {
@@ -97,7 +97,7 @@ export default function Study() {
 
   return (
     <Grid>
-      
+
       <h1>Study Page</h1>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>
