@@ -97,6 +97,7 @@ export default function Study() {
 
   return (
     <Grid>
+      
       <h1>Study Page</h1>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Category</InputLabel>

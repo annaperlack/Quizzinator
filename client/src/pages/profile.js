@@ -28,6 +28,7 @@ const Profile = (props) => {
     return (
 
         <div>
+            
             <h1>Welcome, {profile.data.name}
                 <Avatar sx={{ bgcolor: color }}>
                     {profile.data.name.charAt(0)}

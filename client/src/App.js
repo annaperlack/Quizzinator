@@ -53,6 +53,15 @@ function App() {
           <Grid item>
             {isLoggedIn && <NavBar />}
           </Grid>
+          <Grid alignItems="center" justifyContent="center" container>
+        <Grid display="auto">
+          <img
+            style={{ width: "180px", height: "180px", padding: "10px" }}
+            src={require("./Logo 5.PNG")}
+            alt="picture"
+          />
+        </Grid>
+      </Grid>
           <Grid item p={1} sx={{ overflow: 'auto', }}>
             <Routes>
               <Route
