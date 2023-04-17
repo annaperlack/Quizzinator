@@ -57,7 +57,7 @@ function App() {
             <Grid display="auto">
               <img
                 style={{ width: "180px", height: "180px", padding: "10px" }}
-                src={require("./Logo 5.PNG")}
+                src={require("./logo8.PNG")}
                 alt="Quizzinator Logo"
               />
             </Grid>
