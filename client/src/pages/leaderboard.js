@@ -15,7 +15,7 @@ const Leaderboard = () => {
     console.log(leaderData)
 
     return (
-        <Grid>
+        <Grid p={1}>
             <List sx={{ listStyleType: 'decimal', }}>
                 {leaderData.map(leader => (
                     <ListItem divider='true'>
@@ -23,12 +23,13 @@ const Leaderboard = () => {
                             key={leader._id}
                             primary={
                                 <Typography variant='body1'>
-                                    Name: {leader.user_name}
+                                    {leader.user_name}
                                 </Typography>
                             }
                             secondary={
                                 <Typography variant='caption'>
                                     Average: {Math.trunc(leader.score / leader.total * 100)}%
+                                    Score: {leader.score}/{leader.total}
                                 </Typography>
                             }
                             sx={{
