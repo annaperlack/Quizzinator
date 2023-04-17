@@ -80,7 +80,13 @@ export default function Study() {
   };
 
   const handleScoreSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
+
+    if (answered === 0) {
+      alert('Please answer at least one question before submitting your score.');
+      return;
+    }
+
     try {
       const { data } = await saveQuiz({
         variables: { score: correct, total: answered }
