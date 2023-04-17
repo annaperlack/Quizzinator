@@ -112,7 +112,7 @@ export default function Study() {
           <MenuItem value={'geography'}>Geography</MenuItem>
           <MenuItem value={'music'}>Music</MenuItem>
           <MenuItem value={'arts_and_literature'}>Arts & Literature</MenuItem>
-          <MenuItem value={'film_an_tv'}>Film & TV</MenuItem>
+          <MenuItem value={'film_and_tv'}>Film & TV</MenuItem>
           <MenuItem value={'food_and_drink'}>Food & Drink</MenuItem>
           <MenuItem value={'general_knowledge'}>General Knowledge</MenuItem>
           <MenuItem value={'society_and_culture'}>Society & Culture</MenuItem>
